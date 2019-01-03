@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 class App extends Component {
-
+  
   //Only available in class components 
   state = {
     persons: [
@@ -33,8 +33,10 @@ class App extends Component {
           name={this.state.persons[0].name}       //refers to the class
           age={this.state.persons[0].age}
         />
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>
-          My hobbies: Racing
+        <Person 
+           name={this.state.persons[1].name} 
+           age={this.state.persons[1].age}
+           click = {this.switchNameHandler} > My hobbies: Racing
         </Person>
 
         <Person

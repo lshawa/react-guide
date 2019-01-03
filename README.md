@@ -11,6 +11,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         - Only class-based components can define and use state . You can of course pass the state  down to functional components, but these then can't directly edit it.
 
         - Whenever state  changes, the component will re-render and reflect the new state. The difference to props  is, that this happens within one and the same component - you don't receive new data (props ) from outside!
+
+## Update the DOM in two ways: 
+    1. Using state 
+    2. Using props
 ## Available Scripts
 
 In the project directory, you can run:
