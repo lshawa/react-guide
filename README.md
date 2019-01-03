@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Props and state
+    1. props  and state  are CORE concepts of React. Actually, only changes in props  and/ or state  trigger React to re-render your components and potentially update the DOM in the browser
+
+    2. Props 
+        - Allow you to pass data from a parent (wrapping) component to a child (embedded) component.
+    3. State 
+        - Whilst props allow you to pass data down the component tree (and hence trigger an UI update), state is used to change the component, well, state from within. Changes to state also trigger an UI update.
+
+        - Only class-based components can define and use state . You can of course pass the state  down to functional components, but these then can't directly edit it.
+
+        - Whenever state  changes, the component will re-render and reflect the new state. The difference to props  is, that this happens within one and the same component - you don't receive new data (props ) from outside!
 ## Available Scripts
 
 In the project directory, you can run:
