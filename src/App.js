@@ -31,7 +31,7 @@ class App extends Component {
       persons: [
         { name: 'Max', age: 28 },
         { name: event.target.value, age: 29 },
-        { name: 'Steph', age: 27 }
+        { name: 'Steph', age: 26 }
       ]
     })
   }
@@ -54,22 +54,12 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div >
-          {this.state.persons}
-          <Person
-            name={this.state.persons[0].name}       //refers to the class
-            age={this.state.persons[0].age}
-          />
-          <Person
-            name={this.state.persons[1].name}
-            age={this.state.persons[1].age}
-            click={this.switchNameHandler.bind(this, 'MAX!')}
-            changed={this.nameChangedHandler}> My hobbies: Racing
-            </Person>
-
-          <Person
-            name={this.state.persons[2].name}       //refers to the class
-            age={this.state.persons[2].age}
-          />
+          {this.state.persons.map(person => {
+            return <Person 
+              name ={person.name}
+              age ={person.age}/>
+          })}
+         
         </div>
       ); 
     }
