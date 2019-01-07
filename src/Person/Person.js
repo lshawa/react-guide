@@ -7,7 +7,7 @@ const person = (props) => {
             <p onClick={props.click}>I am {props.name} and I am {props.age} years old!</p>
             <p> {props.children} </p>
             {/* Whenever we type something here we want to use that as a new new name  */}
-            <input type="text" onChange={props.changed}/>
+            <input type="text" onChange={props.changed} value = {props.name}/>
 
         </div>
     )
