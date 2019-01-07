@@ -6,9 +6,9 @@ class App extends Component {
   //Only available in class components 
   state = {
     persons: [
-      { name: 'Max', age: 28 },
-      { name: 'Manu', age: 29 },
-      { name: 'Steph', age: 26 }
+      { id: 'khilh', name: 'Max', age: 28 },
+      { id: 'jk', name: 'Manu', age: 29 },
+      { id: 'jgjj', name: 'Steph', age: 26 }
     ],
     otherState: 'some other value',
     showPersons: false
@@ -27,6 +27,7 @@ class App extends Component {
   // delete a person from array of persons
  deletePersonHandler = (personIndex) => {
     // const persons =   this.state.persons;       //get persons from my state. we get a pointer to the original state
+    //Always update state in an immutable fashion, so without mutating the original state first
     const persons = [...this.state.persons];                        //set persons equal to a new array and this new array can use the spread operator
     persons.splice(personIndex, 1);             //this is a bad practice (index, how many you want to delete)
     this.setState({persons: persons});
@@ -56,7 +57,8 @@ class App extends Component {
               click = {() => this.deletePersonHandler(index)}
               // click = {() => this.deletePersonHandler.bind(this.index)}
               name ={person.name}
-              age ={person.age}/>
+              age ={person.age}
+              key = {person.id}/>
           })}
          
         </div>
