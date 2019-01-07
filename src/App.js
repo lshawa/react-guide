@@ -26,7 +26,8 @@ class App extends Component {
 
   // delete a person from array of persons
  deletePersonHandler = (personIndex) => {
-    const persons =   this.state.persons;       //get persons from my state. we get a pointer to the original state
+    // const persons =   this.state.persons;       //get persons from my state. we get a pointer to the original state
+    const persons = [...this.state.persons];                        //set persons equal to a new array and this new array can use the spread operator
     persons.splice(personIndex, 1);             //this is a bad practice (index, how many you want to delete)
     this.setState({persons: persons});
   }
