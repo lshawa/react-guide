@@ -25,8 +25,10 @@ class App extends Component {
   }
 
   // delete a person from array of persons
- deletePersonHandler = () => {
-
+ deletePersonHandler = (personIndex) => {
+    const persons =   this.state.persons; 
+    persons.splice(personIndex, 1); 
+    this.setState({persons: persons});
   }
 
   togglePersonHandler = () => {
@@ -50,8 +52,8 @@ class App extends Component {
           {/* Outputting a list by mapping an array into an array with jsx elemhts  */}
           {this.state.persons.map((person, index) => {
             return <Person 
-              click = {this.deletePersonHandler(index)}
-              // click = {this.deletePersonHandler.bind(this,index)}
+              click = {() => this.deletePersonHandler(index)}
+              // click = {() => this.deletePersonHandler.bind(this.index)}
               name ={person.name}
               age ={person.age}/>
           })}
